@@ -8,15 +8,15 @@ public class TableBuilder {
 	
 	private List<List<String>> table;
 	
-	public TableBuilder(String... headers) {
+	public TableBuilder(Object... headers) {
 		this.table = new ArrayList<List<String>>();
 		addRow(headers);
 	}
 	
-	public void addRow(String... cells) {
+	public void addRow(Object... cells) {
 		List<String> row = new ArrayList<String>();
 		for(int i=0; i<cells.length; i++) {
-			row.add(cells[i]);
+			row.add(cells[i].toString());
 		}
 		table.add(row);
 	}
